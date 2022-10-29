@@ -21,6 +21,8 @@ export function MoviePerfil() {
     return (
         <div>
             {movie.title}
+            {movie.budget}
+            <p>{movie.runtime} minutos</p>
             MOVIE PERFIL
         </div>
     )
