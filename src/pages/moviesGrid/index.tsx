@@ -1,4 +1,4 @@
-import { MovieInformation } from "./moviePerfil/MovieInformation";
+import { MovieInformation } from "./movieInformation/MovieInformation";
 import { MoviesGridContainer } from './styles';
 
 

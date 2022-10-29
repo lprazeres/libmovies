@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const HeaderContainer = styled.div`
 padding: 2.5rem 0 1.5rem;
 background: ${props => props.theme['base-profile']};
+position: sticky;
+  top: 0;
+  width: 100%
 `;
 
 export const HeaderArea = styled.div`

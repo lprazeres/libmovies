@@ -18,19 +18,20 @@ justify-content: center;
 flex-direction: column;
 gap: 0.2rem;
 
-padding: 10px;;
+padding: 10px;
 
 background: ${props => props.theme['base-profile']};
 
 h2{
     font-size: 1rem;
+    overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 img{
     height: 350px;
     width: 250px;
-    &:hover{
-        opacity: 0.5;
-    }
 }
 button{
     border: 0;

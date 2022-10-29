@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
-import {useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import { MoviePerfilContainer, MoviePerfilContent, MoviePerfilContentContainer } from './styles';
+import { Star, Money, Cardholder, ClockAfternoon, MaskHappy } from 'phosphor-react';
+
 
 export function MoviePerfil() {
 
@@ -19,11 +22,44 @@ export function MoviePerfil() {
 
 
     return (
-        <div>
-            {movie.title}
-            {movie.budget}
-            <p>{movie.runtime} minutos</p>
-            MOVIE PERFIL
-        </div>
+        <MoviePerfilContainer>
+
+            <NavLink to='/'>
+                <button>MENU</button>
+            </NavLink>
+
+            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+            <h1>{movie.title}</h1>
+            <p>
+                <Star size={32} />
+                {movie.vote_average}
+            </p>
+            <h2>{movie.tagline}</h2>
+
+            <MoviePerfilContentContainer>
+
+                <MoviePerfilContent>
+                    <p><Cardholder size={32} /> BUDGET:</p>
+                    <b>US$ {movie.budget}</b>
+                </MoviePerfilContent>
+
+                <MoviePerfilContent>
+                    <p><Money size={32} /> REVENUE:</p>
+                    <b>US$ {movie.revenue}</b>
+                </MoviePerfilContent>
+
+                <MoviePerfilContent>
+                    <p><ClockAfternoon size={32} /> RUN TIME:</p>
+                    <b>{movie.runtime} minutes</b>
+                </MoviePerfilContent>
+
+                <MoviePerfilContent>
+                    <p><MaskHappy size={32} /> DESCRIPTION:</p>
+                    <b>{movie.overview}</b>
+                </MoviePerfilContent>
+
+            </MoviePerfilContentContainer>
+
+        </MoviePerfilContainer>
     )
 }
